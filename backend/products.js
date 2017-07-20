@@ -6,8 +6,8 @@ module.exports = [
         price: 2999,
         inStock: 50,
         reviews: [
-            { text: 'Almost fainted when I saw the price!', rating: 2.5, reviewer: 'Jack	Anderson' },
-            { text: 'That Retina display was all worth it!', rating: 5, reviewer: 'Catherine	Bell' }
+            { text: 'Almost fainted when I saw the price!', rating: 2.5, reviewer: 'Jack Anderson' },
+            { text: 'That Retina display was all worth it!', rating: 5, reviewer: 'Catherine Bell' }
         ]
     },
     {
@@ -17,7 +17,7 @@ module.exports = [
         price: 299,
         inStock: 755,
         reviews: [
-            { text: 'No explosions so far, so pretty happy about that.', rating: 3, reviewer: 'Earl	Green' }
+            { text: 'No explosions so far, so pretty happy about that.', rating: 3, reviewer: 'Earl Green' }
         ]
     },
     {
@@ -27,8 +27,8 @@ module.exports = [
         price: 149,
         inStock: 5,
         reviews: [
-            { text: 'Doesn\'t work. This one is just like the rest of them!', rating: 0.5, reviewer: 'Scott	Ramirez' },
-            { text: 'Where do I start?', rating: 2, reviewer: 'Walter	Stewart' }
+            { text: 'Doesn\'t work. This one is just like the rest of them!', rating: 0.5, reviewer: 'Scott Ramirez' },
+            { text: 'Where do I start?', rating: 2, reviewer: 'Walter Stewart' }
         ]
     },
     {
@@ -46,8 +46,8 @@ module.exports = [
         price: 599,
         inStock: 0,
         reviews: [
-            { text: 'Seems like I had unrealistic expectations...', rating: 1, reviewer: 'Janice	Price' },
-            { text: 'Amazing product!', rating: 4.5, reviewer: 'Denise	Hernandez' }
+            { text: 'Seems like I had unrealistic expectations...', rating: 1, reviewer: 'Janice Price' },
+            { text: 'Amazing product!', rating: 4.5, reviewer: 'Denise Hernandez' }
         ]
     },
     {
@@ -57,7 +57,7 @@ module.exports = [
         price: 19,
         inStock: 81,
         reviews: [
-            { text: 'I threw it on the ground!', rating: 5, reviewer: 'Nicole	Henderson' }
+            { text: 'I threw it on the ground!', rating: 5, reviewer: 'Nicole Henderson' }
         ]
     }
 ];
