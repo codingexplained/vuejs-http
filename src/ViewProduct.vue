@@ -71,8 +71,15 @@
             };
         },
         created() {
+            let customActions = {
+                softDelete: {
+                    method: 'DELETE',
+                    url: 'http://localhost:3000/products/{productId}/reviews/{reviewId}?soft=true'
+                }
+            };
+
             let url = 'http://localhost:3000/products/{productId}/reviews/{reviewId}';
-            this.reviewResource = this.$resource(url);
+            this.reviewResource = this.$resource(url, {}, customActions);
 
             this.getProduct(this.productId)
                 .then(product => this.product = product);
@@ -108,7 +115,8 @@
                 ).then(newReview => this.product.reviews.push(newReview));
             },
             deleteReview(review) {
-                this.reviewResource.delete({
+                //this.reviewResource.delete({
+                this.reviewResource.softDelete({
                     productId: this.product.id,
                     reviewId: review.id
                 }).then(
