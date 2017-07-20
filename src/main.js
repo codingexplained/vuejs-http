@@ -56,6 +56,13 @@ Vue.use(VueResource);
 Vue.http.options.root = 'http://localhost:3000';
 Vue.http.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+Vue.http.interceptors.push((request, next) => {
+    request.headers.set('X-CSRF-TOKEN', 'VERY_SECURE_TOKEN_HERE');
+    next((response) => {
+        console.log(response);
+    });
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

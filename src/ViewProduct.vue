@@ -54,11 +54,6 @@
 
 <script>
     export default {
-        http: {
-            headers: {
-                'X-CSRF-TOKEN': 'VERY_SECURE_TOKEN_HERE'
-            }
-        },
         props: {
             productId: {
                 required: true
