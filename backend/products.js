@@ -6,8 +6,8 @@ module.exports = [
         price: 2999,
         inStock: 50,
         reviews: [
-            { text: 'Almost fainted when I saw the price!', rating: 2.5, reviewer: 'Jack Anderson' },
-            { text: 'That Retina display was all worth it!', rating: 5, reviewer: 'Catherine Bell' }
+            { id: 'ba560d6b-43eb-4ee6-8aee-a792306f3b27', text: 'Almost fainted when I saw the price!', rating: 2.5, reviewer: 'Jack Anderson' },
+            { id: 'a9c4c07f-c363-4fac-a15b-d5452361f777', text: 'That Retina display was all worth it!', rating: 5, reviewer: 'Catherine Bell' }
         ]
     },
     {
@@ -17,7 +17,7 @@ module.exports = [
         price: 299,
         inStock: 755,
         reviews: [
-            { text: 'No explosions so far, so pretty happy about that.', rating: 3, reviewer: 'Earl Green' }
+            { id: '79da2526-ac77-49e6-9f73-40fd54c79feb', text: 'No explosions so far, so pretty happy about that.', rating: 3, reviewer: 'Earl Green' }
         ]
     },
     {
@@ -27,8 +27,8 @@ module.exports = [
         price: 149,
         inStock: 5,
         reviews: [
-            { text: 'Doesn\'t work. This one is just like the rest of them!', rating: 0.5, reviewer: 'Scott Ramirez' },
-            { text: 'Where do I start?', rating: 2, reviewer: 'Walter Stewart' }
+            { id: 'bdf3461e-5f59-43cd-acee-f8471b200b6a', text: 'Doesn\'t work. This one is just like the rest of them!', rating: 0.5, reviewer: 'Scott Ramirez' },
+            { id: '3c0b67c9-215e-4b5a-a35d-ca444213b774', text: 'Where do I start?', rating: 2, reviewer: 'Walter Stewart' }
         ]
     },
     {
@@ -46,8 +46,8 @@ module.exports = [
         price: 599,
         inStock: 0,
         reviews: [
-            { text: 'Seems like I had unrealistic expectations...', rating: 1, reviewer: 'Janice Price' },
-            { text: 'Amazing product!', rating: 4.5, reviewer: 'Denise Hernandez' }
+            { id: '8a3557bd-d8c0-4faf-8ca9-8e0850fb06cf', text: 'Seems like I had unrealistic expectations...', rating: 1, reviewer: 'Janice Price' },
+            { id: '0ba5c6dc-237e-48fb-aeab-c1987d8207c3', text: 'Amazing product!', rating: 4.5, reviewer: 'Denise Hernandez' }
         ]
     },
     {
@@ -57,7 +57,7 @@ module.exports = [
         price: 19,
         inStock: 81,
         reviews: [
-            { text: 'I threw it on the ground!', rating: 5, reviewer: 'Nicole Henderson' }
+            { id: 'b31886a6-ba3a-4c0c-898a-482360275824', text: 'I threw it on the ground!', rating: 5, reviewer: 'Nicole Henderson' }
         ]
     }
 ];
