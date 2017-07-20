@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 import { routes } from './routes';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -50,6 +51,8 @@ router.beforeEach((to, from, next) => {
 
   next();
 });
+
+Vue.use(VueResource);
 
 /* eslint-disable no-new */
 new Vue({
