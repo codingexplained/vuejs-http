@@ -14,7 +14,8 @@
 
             <div v-if="product.reviews.length > 0">
                 <div v-for="review in product.reviews">
-                    <strong>{{ review.reviewer }}</strong> (rating: {{ review.rating }})
+                    <strong>{{ review.reviewer }}</strong> (rating: {{ review.rating }}) -
+                    <a href="#" @click.prevent="deleteReview(review)">delete</a>
                     <p>{{ review.text }}</p>
                 </div>
             </div>
@@ -65,10 +66,14 @@
                     text: '',
                     rating: 0,
                     reviewer: ''
-                }
+                },
+                reviewResource: null
             };
         },
         created() {
+            let url = 'http://localhost:3000/products/{productId}/reviews/{reviewId}';
+            this.reviewResource = this.$resource(url);
+
             this.getProduct(this.productId)
                 .then(product => this.product = product);
         },
@@ -101,6 +106,19 @@
                     response => response.json(),
                     response => alert("Could not add review!")
                 ).then(newReview => this.product.reviews.push(newReview));
+            },
+            deleteReview(review) {
+                this.reviewResource.delete({
+                    productId: this.product.id,
+                    reviewId: review.id
+                }).then(
+                    response => {
+                        // Just be lazy and fetch product again
+                        this.getProduct(this.product.id)
+                            .then(product => this.product = product);
+                    },
+                    response => alert("Could not delete review!")
+                );
             }
         }
     }
