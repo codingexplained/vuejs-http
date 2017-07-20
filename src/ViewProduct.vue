@@ -22,6 +22,27 @@
             <div v-else>
                 <p>No reviews have been added for this product.</p>
             </div>
+
+            <h3>Add Review</h3>
+
+            <form @submit.prevent="addNewReview(newReview)">
+                <div class="form-group">
+                    <label for="reviewName">Name</label>
+                    <input type="text" v-model="newReview.reviewer" class="form-control" id="reviewName" placeholder="Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewRating">Rating</label>
+                    <input type="number" v-model.number="newReview.rating" class="form-control" id="reviewRating" placeholder="Rating">
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewText">Text</label>
+                    <textarea v-model="newReview.text" class="form-control" id="reviewText" cols="30" rows="10"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
         </div>
 
         <div v-else>
@@ -39,7 +60,12 @@
         },
         data() {
             return {
-                product: null
+                product: null,
+                newReview: {
+                    text: '',
+                    rating: 0,
+                    reviewer: ''
+                }
             };
         },
         created() {
@@ -65,6 +91,16 @@
             },
             goBack() {
                 this.$router.history.go(-1);
+            },
+            addNewReview(review) {
+                this.$http.post('http://localhost:3000/products/{productId}/reviews', review, {
+                    params: {
+                        productId: this.product.id
+                    }
+                }).then(
+                    response => response.json(),
+                    response => alert("Could not add review!")
+                ).then(newReview => this.product.reviews.push(newReview));
             }
         }
     }
