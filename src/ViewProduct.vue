@@ -43,15 +43,25 @@
             };
         },
         created() {
-            this.product = this.getProduct(this.productId);
+            this.getProduct(this.productId)
+                .then(product => this.product = product);
         },
         beforeRouteUpdate(to, from, next) {
-            this.product = this.getProduct(to.params.productId);
+            this.getProduct(to.params.productId)
+                .then(product => this.product = product);
+
             next();
         },
         methods: {
             getProduct(productId) {
-
+                return this.$http.get('http://localhost:3000/products/{productId}', {
+                    params: {
+                        productId: productId
+                    }
+                }).then(
+                    response => response.json(),
+                    response => alert("Could not retrieve product!")
+                );
             },
             goBack() {
                 this.$router.history.go(-1);
