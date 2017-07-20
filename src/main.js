@@ -53,6 +53,8 @@ router.beforeEach((to, from, next) => {
 });
 
 Vue.use(VueResource);
+Vue.http.options.root = 'http://localhost:3000';
+Vue.http.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /* eslint-disable no-new */
 new Vue({

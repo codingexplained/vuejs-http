@@ -74,11 +74,11 @@
             let customActions = {
                 softDelete: {
                     method: 'DELETE',
-                    url: 'http://localhost:3000/products/{productId}/reviews/{reviewId}?soft=true'
+                    url: 'products/{productId}/reviews/{reviewId}?soft=true'
                 }
             };
 
-            let url = 'http://localhost:3000/products/{productId}/reviews/{reviewId}';
+            let url = 'products/{productId}/reviews/{reviewId}';
             this.reviewResource = this.$resource(url, {}, customActions);
 
             this.getProduct(this.productId)
@@ -92,7 +92,7 @@
         },
         methods: {
             getProduct(productId) {
-                return this.$http.get('http://localhost:3000/products/{productId}', {
+                return this.$http.get('products/{productId}', {
                     params: {
                         productId: productId
                     }
@@ -105,7 +105,7 @@
                 this.$router.history.go(-1);
             },
             addNewReview(review) {
-                this.$http.post('http://localhost:3000/products/{productId}/reviews', review, {
+                this.$http.post('products/{productId}/reviews', review, {
                     params: {
                         productId: this.product.id
                     }

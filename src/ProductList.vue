@@ -42,7 +42,7 @@
             };
         },
         created() {
-            this.$http.get('http://localhost:3000/products')
+            this.$http.get('products')
                 .then(
                     response => response.json(),
                     response => alert("error")
