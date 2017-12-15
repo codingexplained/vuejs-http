@@ -20,17 +20,16 @@ function deleteReview(productId, reviewId) {
     let product = getProduct(productId);
     
     if (product) {
-        let reviews = product.reviews;
         let index = -1;
         
-        for (let i = 0; i < reviews.length && index == -1; i++) {
-            if (reviews[i].id == reviewId) {
+        for (let i = 0; i < product.reviews.length && index == -1; i++) {
+            if (product.reviews[i].id == reviewId) {
                 index = i;
             }
         }
         
         if (index != -1) {
-            product.reviews = reviews.splice(index, 1);
+            product.reviews.splice(index, 1);
             return true;
         }
     }
